@@ -106,13 +106,30 @@ The OS is governed by a Constitution that cannot be overridden without unanimous
 6. **Cost Sovereignty** — Real-time cost visibility for every operation.
 7. **Open Source** — MIT License, forever.
 
-## Built By
+## What Does NOT Work Yet (Honest List)
 
-- **Daavud** — Architect, Sovereign
-- **Manus** — Execution, Ring 1 Core
-- **Claude** — Constitutional Review
-- **Gemini** — Strategic Analysis
-- **Grok** — Contrarian Audit (and the spec we rewrote at 200%)
+Radical transparency, adopted from Claude's contribution:
+
+- **Bare-metal boot**: The Rust code compiles but targets `std` simulation. Actual UEFI boot requires a `no_std` binary with `uefi-rs`, framebuffer driver, and disk I/O. That is Phase 2.
+- **LLM inference on bare metal**: The hardest unsolved problem. Running a model without an OS underneath requires custom tensor math, memory-mapped model loading, and NPU/GPU driver integration. Nobody has shipped this yet.
+- **Real API calls from Rust**: The Model Router selects models but the Rust layer does not call them. The Python bridge handles actual inference via API keys.
+- **Cross-device continuity**: Conceptualized and architecturally specified, not yet built.
+- **AR workspaces**: Conceptualized, not built.
+- **Self-evolving kernel modules**: Simulated via genetic algorithms in Python, not yet running in the Rust kernel.
+
+## Multi-Agent Attribution
+
+This project was built by the Pantheon Council — 5 AI systems from 4 providers, each contributing their strengths:
+
+| Agent | Provider | Role | Contribution |
+| :--- | :--- | :--- | :--- |
+| **Daavud** | Human | Architect, Sovereign | Vision, constitution, authority |
+| **Manus** | Manus | Executor, Ring 1 Core | 95 tests, 65+ API endpoints, 10 innovations, website, deployment |
+| **Claude** | Anthropic | Constitutional Scribe | Clean Rust rewrite, zero-dep Python, radical honesty, behavioral tests |
+| **Gemini** | Google | Strategic Analyst | Cross-domain synthesis, feature mapping |
+| **Grok** | xAI | Contrarian Auditor | Original v2.1 spec (shredded and rebuilt at 200%) |
+
+Claude's full contribution is preserved with attribution in `claude-contrib/`. See `INTEGRATION_LOG.md` for the complete audit.
 
 ## License
 
