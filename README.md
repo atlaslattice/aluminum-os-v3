@@ -35,7 +35,7 @@ Ring 0: Forge Core .......... Bare-metal boot, memory management, IPC, schedulin
 
 ```bash
 # Clone
-git clone https://github.com/splitmerge420/aluminum-os-v3.git
+git clone https://github.com/atlaslattice/aluminum-os-v3.git
 cd aluminum-os-v3
 
 # Build Rust crates
